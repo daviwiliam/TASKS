@@ -1,0 +1,20 @@
+<div class="page">
+    <div class="container-user">
+        <div class="container-inf">
+            {{#if task.done}}
+                <h3 class="ok-done">Tarefa concluída</h3>
+            {{else}}
+                <h3 class="not-done">Tarefa não concluída</h3>
+            {{/if}}
+            <h1 class="make">{{task.title}}</h1>
+            <p class="desc">{{task.description}}</p>
+            <p><b class="make">Criado em: </b>{{task.createdAt}}</p>
+        </div>
+        <div class="but">
+            <a href="/tasks/edit/{{task.id}}" class="link edit">Editar</a>
+            <form action="/tasks/delete/{{task.id}}" method="post">
+                <input type="submit" value="Excluir" class="link delete">
+            </form>
+        </div>
+    </div>
+</div>
